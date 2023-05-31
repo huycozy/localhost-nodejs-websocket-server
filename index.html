@@ -6,16 +6,15 @@
 </head>
 <body>
 	<h1>Hello world</h1>
-<script>
-const ws = new WebSocket("ws://192.168.31.177:8080");
-ws.addEventListener("open", () =>{
-  console.log("We are connected");
-  ws.send("How are you?");
-});
- 
-ws.addEventListener('message', function (event) {
-    console.log(event.data);
-});
-</script>
+  <script>
+  const ws = new WebSocket("ws://192.168.31.177:8080");
+  ws.addEventListener("open", () =>{
+    console.log("We are connected");
+  });
+  
+  ws.addEventListener('message', function (event) {
+      console.log(`Received: ${event.data}`);
+  });
+  </script>
 </body>
 </html>
